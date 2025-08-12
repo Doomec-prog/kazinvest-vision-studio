@@ -13,7 +13,7 @@ const brandLogos = [
 ];
 
 const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(
-  "http://kazinvestadviser.com/"
+  "https://kazinvestadviser.com/"
 )}`;
 
 const Index = () => {
@@ -162,7 +162,7 @@ const Index = () => {
             <div data-reveal>
               <h2 className="font-display text-3xl md:text-5xl font-bold">Контакты</h2>
               <div className="mt-6 glass-card p-6 space-y-2">
-                <p><span className="text-muted-foreground">Телефон:</span> <a href="tel:+7" className="story-link">+7</a></p>
+                <p><span className="text-muted-foreground">Телефон:</span> <a href="tel:+77077185858" className="story-link">+7(707)718-58-58</a></p>
                 <p><span className="text-muted-foreground">Email:</span> <a href="mailto:info@kazinvestadviser.com" className="story-link">info@kazinvestadviser.com</a></p>
               </div>
 
