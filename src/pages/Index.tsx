@@ -8,7 +8,7 @@ const brandLogos = [
   { src: "/lovable-uploads/0476cf2a-bec3-4071-b26a-f2c75d767225.png", name: "Cezar Production" },
   { src: "/lovable-uploads/33f03dc4-1923-433b-ba20-e024f2c80d42.png", name: "Centurion Films" },
   { src: "/lovable-uploads/f532d826-ecd1-40c3-b671-b2d82de1da7e.png", name: "Dostyk TV" },
-  { src: "/lovable-uploads/550e7914-71df-49a8-98e5-0de5acbcadf4.png", name: "Centurion Sound" },
+  { src: "/lovable-uploads/6d13e479-1e62-49a8-ab8c-acf495bf9a95.png", name: "Centurion Sound" },
   { src: "/lovable-uploads/8de13c79-ffcd-4fd1-8559-a9d022b4b924.png", name: "Лига кинематографистов Казахстана" },
 ];
 
