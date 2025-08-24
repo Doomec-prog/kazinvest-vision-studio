@@ -17,6 +17,7 @@ const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${e
 )}`;
 
 const Index = () => {
+  // Force component refresh
   // Reveal on scroll
   useEffect(() => {
     const els = document.querySelectorAll<HTMLElement>("[data-reveal]");

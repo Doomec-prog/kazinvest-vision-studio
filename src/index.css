@@ -153,4 +153,8 @@ All colors MUST be HSL.
     border-color: hsl(var(--foreground) / 0.08);
     backdrop-filter: blur(8px);
   }
+
+  .story-link {
+    @apply text-primary hover:text-primary/80 transition-colors;
+  }
 }
