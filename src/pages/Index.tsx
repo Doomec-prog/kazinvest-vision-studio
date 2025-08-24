@@ -8,7 +8,7 @@ const brandLogos = [
   { src: "/lovable-uploads/0476cf2a-bec3-4071-b26a-f2c75d767225.png", name: "Cezar Production" },
   { src: "/lovable-uploads/33f03dc4-1923-433b-ba20-e024f2c80d42.png", name: "Centurion Films" },
   { src: "/lovable-uploads/f532d826-ecd1-40c3-b671-b2d82de1da7e.png", name: "Dostyk TV" },
-  { src: "/lovable-uploads/26be8b76-4fc9-4b30-b291-50218ed437e2.png", name: "Eurasia24" },
+  { src: "/lovable-uploads/33f03dc4-1923-433b-ba20-e024f2c80d42.png", name: "Centurion Sound" },
   { src: "/lovable-uploads/8de13c79-ffcd-4fd1-8559-a9d022b4b924.png", name: "Лига кинематографистов Казахстана" },
 ];
 
@@ -46,7 +46,7 @@ const Index = () => {
       <header className="sticky top-0 z-50 backdrop-blur border-b border-white/10 bg-background/60">
         <nav className="container flex items-center justify-between py-3">
           <a href="#hero" className="flex items-center gap-3" aria-label="KazInvest Adviser">
-            <img src={logoMain} alt="KazInvest Adviser логотип" className="h-8 w-auto" loading="eager" />
+            <img src={logoMain} alt="KazInvest Adviser логотип" className="h-16 w-auto" loading="eager" />
           </a>
           <div className="hidden md:flex items-center gap-6 text-sm">
             <a href="#about" className="hover:text-primary transition-colors">О компании</a>
@@ -71,9 +71,9 @@ const Index = () => {
                 <img
                   src={logoMain}
                   alt="KazInvest Adviser логотип"
-                  className="h-16 md:h-20 w-auto drop-shadow"
-                  width={200}
-                  height={80}
+                  className="h-32 md:h-40 w-auto drop-shadow"
+                  width={400}
+                  height={160}
                 />
               </div>
               <h1 className="font-display text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
@@ -100,7 +100,7 @@ const Index = () => {
             <h2 className="font-display text-3xl md:text-5xl font-bold">О компании</h2>
             <p className="text-base md:text-lg text-muted-foreground">
               KazInvest — ведущий медиахолдинг Казахстана, объединяющий бренды Cezar Production,
-              Centurion Films, Dostyk TV, Eurasia24 и Лигу Кинематографистов Казахстана. Мы создаём
+              Centurion Films, Dostyk TV, Centurion Sound и Лигу Кинематографистов Казахстана. Мы создаём
               контент мирового уровня: от идеи и съёмки до продвижения.
             </p>
           </article>
