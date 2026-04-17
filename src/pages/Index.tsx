@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Film, Camera, Globe, Cpu, Users, Megaphone, Sparkles, Shield } from "lucide-react";
+import { Award, Camera, Clapperboard, Cpu, Globe, Megaphone, ShieldCheck, Sparkles, Users } from "lucide-react";
 import { toast } from "sonner";
 
 const logoMain = "/lovable-uploads/36df7d5d-ba74-43e8-bf70-182d3d53630d.png";
@@ -17,8 +17,6 @@ const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${e
 )}`;
 
 const Index = () => {
-  // Force component refresh
-  // Reveal on scroll
   useEffect(() => {
     const els = document.querySelectorAll<HTMLElement>("[data-reveal]");
     const io = new IntersectionObserver(
@@ -37,7 +35,7 @@ const Index = () => {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast("Спасибо! Мы свяжемся с вами в ближайшее время.");
+    toast.success("Спасибо! Мы свяжемся с вами в ближайшее время.");
     formRef.current?.reset();
   };
 
@@ -50,6 +48,7 @@ const Index = () => {
           </a>
           <div className="hidden md:flex items-center gap-6 text-sm">
             <a href="#about" className="hover:text-primary transition-colors">О компании</a>
+            <a href="#cases" className="hover:text-primary transition-colors">Кейсы</a>
             <a href="#capabilities" className="hover:text-primary transition-colors">Возможности</a>
             <a href="#contact" className="hover:text-primary transition-colors">Контакты</a>
           </div>
@@ -77,18 +76,30 @@ const Index = () => {
                 />
               </div>
               <h1 className="font-display text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                Вдохновляем, создаём, меняем будущее медиа
+                Премиум-производство медиа для брендов, государства и международных партнёров
               </h1>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Современный медиахолдинг, соединяющий кино, технологии и масштабные проекты.
+                KazInvest Adviser объединяет креатив, технологичность и стратегию, чтобы превращать идеи в заметные проекты с измеримым эффектом.
               </p>
               <div className="mt-10 flex items-center justify-center gap-4">
                 <Button variant="hero" size="lg" asChild>
                   <a href="#contact" aria-label="Связаться с нами">Связаться</a>
                 </Button>
                 <Button variant="glass" size="lg" asChild>
-                  <a href="#about">О компании</a>
+                  <a href="#cases">Смотреть кейсы</a>
                 </Button>
+              </div>
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                {[
+                  { value: "120+", label: "реализованных проектов" },
+                  { value: "5", label: "профильных брендов в холдинге" },
+                  { value: "24/7", label: "оперативная продакшн-поддержка" },
+                ].map((item) => (
+                  <article key={item.label} className="glass-card p-4" data-reveal>
+                    <p className="text-2xl font-bold">{item.value}</p>
+                    <p className="text-sm text-muted-foreground">{item.label}</p>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
@@ -99,9 +110,9 @@ const Index = () => {
           <article className="mx-auto max-w-4xl text-center space-y-6" data-reveal>
             <h2 className="font-display text-3xl md:text-5xl font-bold">О компании</h2>
             <p className="text-base md:text-lg text-muted-foreground">
-              KazInvest — ведущий медиахолдинг Казахстана, объединяющий бренды Cezar Production,
-              Centurion Films, Dostyk TV, Centurion Sound и Лигу Кинематографистов Казахстана. Мы создаём
-              контент мирового уровня: от идеи и съёмки до продвижения.
+              KazInvest Adviser — медиахолдинг Казахстана, объединяющий бренды Cezar Production,
+              Centurion Films, Dostyk TV, Centurion Sound и Лигу Кинематографистов Казахстана. Берём на себя
+              полный цикл: стратегия, продакшн, постпродакшн, дистрибуция и продвижение.
             </p>
           </article>
 
@@ -115,13 +126,43 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Cases */}
+        <section id="cases" className="container py-20 md:py-28">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div data-reveal>
+              <h2 className="font-display text-3xl md:text-5xl font-bold">Кейсы и результаты</h2>
+              <p className="mt-3 text-muted-foreground max-w-2xl">
+                Мы делаем контент, который работает не только визуально, но и бизнесово: охваты, вовлечение, капитал бренда и доверие аудитории.
+              </p>
+            </div>
+            <Button variant="glass" asChild>
+              <a href="#contact">Обсудить проект</a>
+            </Button>
+          </div>
+
+          <div className="mt-10 grid lg:grid-cols-3 gap-6">
+            {[
+              { title: "Национальная кампания", result: "12 млн+ просмотров за 30 дней", text: "Комплекс: стратегия, сценарий, съёмки, контент-пакет для digital и ТВ." },
+              { title: "Кинопроект полного цикла", result: "ТОП-3 по кассовым сборам в регионе", text: "От девелопмента идеи до проката и PR-сопровождения релиза." },
+              { title: "Бренд-медиа для корпорации", result: "+41% вовлечённости за квартал", text: "Серийный видеопродакшн, спецпроекты и единая контент-архитектура." },
+            ].map((item) => (
+              <article key={item.title} className="glass-card hover-glow p-6" data-reveal>
+                <p className="text-xs uppercase tracking-wide text-primary">Кейс</p>
+                <h3 className="mt-2 text-xl font-semibold">{item.title}</h3>
+                <p className="mt-4 text-lg font-semibold">{item.result}</p>
+                <p className="mt-2 text-muted-foreground">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         {/* Capabilities */}
         <section id="capabilities" className="bg-secondary/40 py-20 md:py-28">
           <div className="container">
             <h2 className="font-display text-3xl md:text-5xl font-bold text-center" data-reveal>Наши возможности</h2>
             <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { Icon: Film, title: "Полный цикл производства", text: "От сценария до кассовых сборов." },
+                { Icon: Clapperboard, title: "Полный цикл производства", text: "От идеи и сценария до релиза и отчётности." },
                 { Icon: Camera, title: "Современная техбаза", text: "Голливудское оборудование, павильоны, звук." },
                 { Icon: Globe, title: "Организация съёмок", text: "По всему Казахстану и за его пределами." },
                 { Icon: Cpu, title: "Внедрение AI", text: "Технологии на страже контента." },
@@ -140,20 +181,41 @@ const Index = () => {
 
         {/* Why us */}
         <section id="why" className="container py-20 md:py-28">
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-center" data-reveal>Почему мы</h2>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-center" data-reveal>Почему выбирают нас</h2>
           <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { Icon: Sparkles, title: "Инновации + Творчество" },
-              { Icon: Users, title: "Команда профессионалов" },
-              { Icon: Film, title: "Гибкость и масштаб" },
-              { Icon: Shield, title: "Надёжность" },
+              { Icon: Sparkles, title: "Инновации + креатив" },
+              { Icon: Users, title: "Экспертная команда" },
+              { Icon: Award, title: "Гибкость и масштаб" },
+              { Icon: ShieldCheck, title: "Прозрачные процессы" },
             ].map(({ Icon, title }) => (
               <article key={title} className="glass-card hover-glow p-6" data-reveal>
                 <Icon className="text-primary" />
                 <h3 className="mt-3 text-xl font-semibold">{title}</h3>
-                <p className="mt-2 text-muted-foreground">Создаём заметный результат с любовью к деталям и ответственностью за срок.</p>
+                <p className="mt-2 text-muted-foreground">Работаем по KPI, фиксируем этапы и создаём результат с ответственностью за сроки и качество.</p>
               </article>
             ))}
+          </div>
+        </section>
+
+        {/* Process */}
+        <section className="bg-secondary/40 py-20 md:py-28">
+          <div className="container">
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-center" data-reveal>Как строится работа</h2>
+            <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { step: "01", title: "Брифинг", text: "Формируем цели проекта, KPI, портрет аудитории." },
+                { step: "02", title: "Концепция", text: "Разрабатываем креатив и медиастратегию." },
+                { step: "03", title: "Продакшн", text: "Организуем съёмки, постпродакшн и контроль качества." },
+                { step: "04", title: "Дистрибуция", text: "Запускаем продвижение, считаем метрики, масштабируем." },
+              ].map((item) => (
+                <article key={item.step} className="glass-card p-6" data-reveal>
+                  <p className="text-sm text-primary font-semibold">{item.step}</p>
+                  <h3 className="mt-2 text-xl font-semibold">{item.title}</h3>
+                  <p className="mt-2 text-muted-foreground">{item.text}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -165,6 +227,7 @@ const Index = () => {
               <div className="mt-6 glass-card p-6 space-y-2">
                 <p><span className="text-muted-foreground">Телефон:</span> <a href="tel:+77077185858" className="story-link">+7(707)718-58-58</a></p>
                 <p><span className="text-muted-foreground">Email:</span> <a href="mailto:info@kazinvestadviser.com" className="story-link">info@kazinvestadviser.com</a></p>
+                <p><span className="text-muted-foreground">Формат:</span> Кино · Реклама · ТВ · Digital · Документальные проекты</p>
               </div>
 
               <div className="mt-6 grid sm:grid-cols-2 gap-6">
@@ -193,11 +256,23 @@ const Index = () => {
                 <input id="email" type="email" name="email" required className="w-full bg-background border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
               </div>
               <div>
+                <label htmlFor="projectType" className="block text-sm mb-1">Тип проекта</label>
+                <select id="projectType" name="projectType" className="w-full bg-background border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary">
+                  <option value="film">Кино / сериал</option>
+                  <option value="commercial">Реклама / брендинг</option>
+                  <option value="tv">Телепроект</option>
+                  <option value="other">Другое</option>
+                </select>
+              </div>
+              <div>
                 <label htmlFor="message" className="block text-sm mb-1">Сообщение</label>
                 <textarea id="message" name="message" rows={5} required className="w-full bg-background border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary" />
               </div>
+              <label className="flex items-start gap-2 text-xs text-muted-foreground">
+                <input type="checkbox" required className="mt-0.5" />
+                <span>Подтверждаю согласие на обработку персональных данных и получение обратной связи по проекту.</span>
+              </label>
               <Button variant="hero" size="lg" type="submit">Отправить</Button>
-              <p className="text-xs text-muted-foreground">Нажимая «Отправить», вы соглашаетесь с обработкой персональных данных.</p>
             </form>
           </div>
         </section>
@@ -208,6 +283,7 @@ const Index = () => {
           <p>© {new Date().getFullYear()} KazInvest Adviser</p>
           <nav className="flex items-center gap-6">
             <a href="#about" className="hover:text-primary">О компании</a>
+            <a href="#cases" className="hover:text-primary">Кейсы</a>
             <a href="#capabilities" className="hover:text-primary">Возможности</a>
             <a href="#contact" className="hover:text-primary">Контакты</a>
           </nav>
